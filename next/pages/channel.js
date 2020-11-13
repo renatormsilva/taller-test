@@ -63,8 +63,11 @@ import NewChannelContainer from 'app/modules/channel/containers/NewChannelContai
 
 const ChatRoom = ({ url, url: { query: { channel = 'general' } } }) => (
   <CurrentUserContainer>
-    { ({ user }) => (
+    { ({ user }) => ( 
       <ChannelsContainer>
+
+        
+
         { ({ loading, channels }) => (
           (loading && !channels.length) ? <LoadingComponent /> : (
             <App centered={ false }>
@@ -116,7 +119,6 @@ const ChatRoom = ({ url, url: { query: { channel = 'general' } } }) => (
                             { '#' + channel }
                           </Title>
 
-                          {/* <Button icon={ <RefreshIcon /> } onClick={ () => refetch() } /> */}
                         </StyledRoomHeader>
 
                         <Box pad='medium' flex='grow'>
